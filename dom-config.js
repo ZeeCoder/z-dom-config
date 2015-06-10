@@ -14,7 +14,7 @@ module.exports = {
         }
 
         if (typeof defaultConfig === 'object') {
-            return merge.recursive(true, config, defaultConfig);
+            return merge.recursive(true, defaultConfig, config);
         }
 
         return config;
