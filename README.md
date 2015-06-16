@@ -37,9 +37,6 @@ dom_config.load(
 // -> {bool_value: false, something_else: 42}
 ```
 
-## Testing
-Tests are in a work-in-progress state.
-
 ## License
 [MIT](LICENSE)
 
