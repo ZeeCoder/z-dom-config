@@ -1,4 +1,5 @@
 # z-dom-config
+[![Build Status](https://travis-ci.org/ZeeCoder/z-dom-config.svg?branch=master)](https://travis-ci.org/ZeeCoder/z-dom-config)
 [![npm version](https://badge.fury.io/js/z-dom-config.svg)](http://badge.fury.io/js/z-dom-config)
 
 This module helps loading JSON configuration from `data-*` attributes.

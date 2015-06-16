@@ -1,11 +1,14 @@
 {
   "name": "z-dom-config",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A solution to load JSON configuration from DOM attributes.",
   "main": "dom-config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZeeCoder/z-dom-config.git"
+  },
+  "scripts": {
+    "test": "mocha test/*test.js"
   },
   "keywords": [
     "DOM",
@@ -18,14 +21,15 @@
     "url": "https://github.com/ZeeCoder/z-dom-config/issues"
   },
   "homepage": "https://github.com/ZeeCoder/z-dom-config#readme",
+  "dependencies": {
+    "merge": "^1.2.0"
+  },
   "devDependencies": {
+    "chai": "^3.0.0",
     "clone": "^1.0.2",
     "jquery": "^2.1.4",
     "jsdom": ">= 0.1.23 < 4.0.0",
     "mocha": "^2.2.5",
-    "mocha-jsdom": "^0.2.1"
-  },
-  "dependencies": {
-    "merge": "^1.2.0"
+    "mocha-sinon": "^1.1.4"
   }
 }
