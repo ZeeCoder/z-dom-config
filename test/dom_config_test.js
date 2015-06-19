@@ -8,7 +8,7 @@ require('mocha-sinon');
 describe('dom-config.js', function () {
     var window, document, body, $;
 
-    beforeEach(function() {
+    beforeEach(function(done) {
         this.sinon.stub(console, 'error');
         this.dom_config = clone(dom_config);
 
@@ -18,6 +18,8 @@ describe('dom-config.js', function () {
                 window = windowObj;
                 document = windowObj.document;
                 $ = require('jquery')(window);
+
+                done();
             }
         );
     });
