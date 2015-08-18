@@ -27,6 +27,7 @@ var dom_config = require('z-dom-config');
 // Note: If the string is not a valid JSON string, then a console error is shown
 // and an empty object will be used instead of the attribute's contents.
 dom_config.load(
+    // jQuery is optional, it works with `document.getElementById('target-element')` too
     $('#target-element'),
     'configuration',
     {
@@ -39,4 +40,3 @@ dom_config.load(
 
 ## License
 [MIT](LICENSE)
-
