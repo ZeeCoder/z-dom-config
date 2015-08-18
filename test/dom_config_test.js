@@ -6,8 +6,6 @@ var dom_config = require('../dom-config');
 require('mocha-sinon');
 
 describe('dom-config.js', function () {
-    var window, document, body, $;
-
     beforeEach(function(done) {
         this.sinon.stub(console, 'error');
         this.dom_config = clone(dom_config);
@@ -15,9 +13,9 @@ describe('dom-config.js', function () {
         jsdom.env(
             fs.readFileSync(__dirname + '/fixtures/index.html', 'utf-8'),
             function (err, windowObj) {
-                window = windowObj;
-                document = windowObj.document;
-                $ = require('jquery')(window);
+                global.window = windowObj;
+                global.document = windowObj.document;
+                global.jQuery = global.$ = require('jquery');
 
                 done();
             }
@@ -25,6 +23,17 @@ describe('dom-config.js', function () {
     });
 
     describe('#load', function () {
+        it('should load the data-attributes in json properly without jQuery', function() {
+            expect(
+                this.dom_config.load(
+                    document.getElementById('module1'),
+                    'module')
+                ).to.deep.equal({
+                    key: 'value'
+                }
+            );
+        });
+
         it('should load the data-attributes in json properly', function() {
             expect(this.dom_config.load($('#module1'), 'module')).to.deep.equal({
                 key: 'value'
